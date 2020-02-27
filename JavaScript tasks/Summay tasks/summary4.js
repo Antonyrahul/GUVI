@@ -1,0 +1,36 @@
+var div1 = document.createElement("div");
+document.body.appendChild(div1);
+div1.id='div1';
+var div2 = document.createElement("div");
+document.body.appendChild(div2);
+div2.id='div2';
+var images = ["img1.png","img2.png","img3.jpg"];
+var img1 = document.createElement('img');
+img1.id='imgg1';
+div1.appendChild(img1);
+img1.style.width="200px";
+img1.style.height="150px";
+img1.src = images[0];
+var img2 = document.createElement('img');
+img2.id='imgg2';
+div1.appendChild(img2);
+img2.style.width="200px";
+img2.style.height="150px";
+img2.src = images[1];
+var img3 = document.createElement('img');
+img3.id='imgg3';
+div1.appendChild(img3);
+img3.style.width="200px";
+img3.style.height="150px";
+img3.src = images[2];
+var img4 = document.createElement('img');
+img4.id='imgg4';
+div2.appendChild(img4);
+img4.style.width="1000px";
+img4.style.height="1000px";
+document.getElementById("imgg1").onclick=function(){onclick(0)};
+document.getElementById("imgg2").onclick=function(){onclick(1)};
+document.getElementById("imgg3").onclick=function(){onclick(2)};
+function onclick(i) {
+document.getElementById("imgg4").src =images[i];
+}
