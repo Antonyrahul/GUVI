@@ -58,15 +58,9 @@ function reply_click()
 		//vallarr = vall.split("*");
 		obj = new calculator(vall)
 		if(vall.includes("+"))
-		{
-			
-			vall = obj.add();
-		}
+		vall = obj.add();
 		else if(vall.includes("-"))
-		{
-			
-			vall = obj.sub();
-		}
+		vall = obj.sub();
 		else if(vall.includes("*"))
 			vall = obj.mul();
 		else if(vall.includes("/"))
