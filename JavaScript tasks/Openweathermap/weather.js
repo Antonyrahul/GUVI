@@ -7,11 +7,11 @@ var contries = fetch("https://restcountries.eu/rest/v2/all")
   .then((data) => {
    //console.log(data);
    var table = document.getElementById("myTable");
-	for(var i in data){
+	for(let i in data){
     var key = i;
     var val = data[i];
 	
-	for(var j in val){
+	for(let j in val){
         var sub_key = j;
         var sub_val = val[j];
 
@@ -38,7 +38,14 @@ var contries = fetch("https://restcountries.eu/rest/v2/all")
 		
 		var cell0 = row.insertCell(0);
 		 cell0.style.width = "1000px";
-		 cell0.innerHTML =rest.name;
+		 cell0.innerHTML =data[i].capital;
+		 var img = document.createElement('img');
+		img.src = data[i].flag;
+		img.style.width="150px";
+		img.style.height="150px";
+		cell0.appendChild(img);
+		 
+
 
 		 var cell1 = row.insertCell(1);
 		 cell1.style.width = "1000px";
