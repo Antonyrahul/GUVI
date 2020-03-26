@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=number]{
+  width: 10%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 75%;
+  height :100%
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+ img.image {
+  height: 350px;
+  width: 350px;
+}
+
+meter {
+  width: 700px;
+  height: 45px;
+}
+
+</style>
+</head>
+<script src = "form.js"></script>
+<body>
+
+<h3>Corona Questionare</h3>
+
+<div class="container">
+  <form id = "form1">
+    <label for="symptoms">1.Select the symptoms that you have<br></label>
+
+    <input type="checkbox" id="fever" name="sym" >
+    <label for="fever">Fever</label><br>
+    <input type="checkbox" id="cough" name="sym" >
+    <label for="cough">Cough</label><br>
+    <input type="checkbox" id="sneeze" name="sym" >
+   <label for="sneeze">Sneezing</label><br>
+    <input type="checkbox" id="sore" name="sym" >
+    <label for="sore">Sore Throat</label><br>
+    <input type="checkbox" id="fatigue" name="sym" >
+    <label for="fatigue">I feel tired</label><br>
+    <input type="checkbox" id="breathe" name="sym" >
+    <label for="breathe">Diffculty while breathing</label><br>
+    <input type="checkbox" id="myalgia" name="sym" >
+    <label for="myalgia">Muscle pain</label><br><br><br>
+    <label for="symtomdays">2.How long have you had these symptoms ,if any<br></label>
+    <input type="number" id="symptomdays"><br><br><br>
+    <label for="travel">3.Have you travelled to any foreign countries in past 30 days<br></label>
+    <input type="radio" id="travely" name="travel" value="travely" onclick="document.getElementById('countries').disabled = false;">
+    <label for="travely">yes</label><br>
+    <input type="radio" id="traveln" name="travel" value="traveln" onclick="document.getElementById('countries').disabled = true;">
+    <label for="traveln">no</label><br><br><br>
+
+    <label for="countrieslist">4.Mention the countries</label>
+    <input type="text" id="countries" disabled><br><br><br>
+
+    <label for="travel">5.Have you had any contact with any covid-19 suspected patient/any foreign returned<br></label>
+    <input type="radio" id="suspecty" name="suspect" value="suspecty">
+    <label for="suspecty">yes</label><br>
+    <input type="radio" id="suspectn" name="suspect" value="suspectn">
+    <label for="suspectn">no</label><br><br><br>
+
+    <label for="travel">6.Are you above age 18<br></label>
+    <input type="radio" id="agey" name="age" value="agey">
+    <label for="agey">yes</label><br>
+    <input type="radio" id="agen" name="age" value="agen">
+    <label for="agen">no</label><br><br><br>
+
+    <input type="submit" value="Submit" onclick="processs();return false;">
+  </form>
+</div>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" id ="myspan">&times;</span>
+    
+    <meter id="coronarisk" value ="0"  min="0" max="10"></meter><br><br><br>
+    <p id ="risktext"></p><br><br>
+    <img  class="image" id = "image"></img>
+    
+
+  </div>
+
+</div>
+
+</body>
+</html>
