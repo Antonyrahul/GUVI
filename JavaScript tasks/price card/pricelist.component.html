@@ -1,0 +1,15 @@
+<div class="card mb-5 mb-lg-0">
+    <div class="card-body">
+        <h5 class="card-title text-muted text-uppercase text-center">{{cardDetails.plan}}</h5>
+        <h6 class="card-price text-center">${{cardDetails.price}}<span class="period">/month</span></h6>
+        <hr>
+        <ul class="fa-ul">
+            <li *ngFor="let details of cardDetails.avlfeatures"  [ngClass]="{'text-muted':details.mute,'bold':details.bold}"><span class="fa-li"><i class ="fa fa-check" [ngClass]="details.mute?'fa fa-times':'fa fa-check'"></i></span>{{details.name}}</li>
+
+            <li *ngFor="let details of cardDetails.notavlfeatures" class="text-muted"><span class="fa-li"><i
+                        class="fa fa-times"></i></span>{{details}}</li>
+
+        </ul>
+        <a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
+    </div>
+</div>

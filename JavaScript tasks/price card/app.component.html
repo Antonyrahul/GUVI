@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+  <section class="pricing py-5">
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+<app-pricelist [cardDetails]= "card1"></app-pricelist>
+</div>
+<div class="col-lg-4">
+<app-pricelist [cardDetails]="card2"></app-pricelist>
+</div>
+<div class="col-lg-4">
+<app-pricelist [cardDetails] = "card3"></app-pricelist>
+</div>
+</div>
+</div>
+</section>
+
+</body>
+</html>
